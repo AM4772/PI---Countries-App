@@ -1,0 +1,37 @@
+.card a {
+    color: white;
+    font-weight: bolder;
+}
+
+.card a:hover {
+    color: green;
+}
+
+.card p {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+
+.card {
+    flex: 1;
+    height: 250px;
+    background-color: #493003;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px gray;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 1000ms ease-in;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card__image {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,37 @@
+.container {
+    width: max-content;
+    height: max-content;
+    align-content: center;
+    border: 1px solid green;
+    margin-top: 30px;
+    position: relative;
+}
+
+.button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+}
+
+.button:hover {
+    background: red;
+    color: #fff;
+}
+
+.my_form {
+    padding: 20px;
+}
+
+.my_form .form_group {
+    padding-bottom: 15px;
+}
+
+.form_gr .label {
+    display: block;
+}
+
+.my_form .input {
+    padding: 8px;
+    width: 100%;
+}
