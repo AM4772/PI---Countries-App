@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LandingPage from './components/LandingPage/Landing';
 import Home from './components/Home/Home';
-import CreateActivity from './components/NewActivity/NewActivity';
+import CreateActivity from './components/Form/FormActivity';
 import CountryDetails from './components/CountryDetails/CountryDetails';
 // import About from './components/About/About';
 // import NavBar from './components/Nav/NavBar';

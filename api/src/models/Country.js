@@ -8,8 +8,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       primaryKey: true,
       allowNull: false,
-      validate: {
-        
+      validate: {        
         is: /^[A-Z]{3}$/i,
         isUppercase: true
       }

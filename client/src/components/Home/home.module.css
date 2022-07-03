@@ -1,27 +1,24 @@
 #showcase {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
+    /* width: 100%;
+    height: 100%; */
+    /* margin: 0px; */
     /* object-fit: cover; */
-    background-color: aqua;
+    /* background-color: aqua; */
     background-image: url("../../assets/pexels-monstera-7412053.jpg");
     /* background-position: 35% 100%; */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
 }
 
-/* .cards{
-    display: inline-block;
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: 2em;
-} */
 .card_wrapper {
     height: 275px;
     box-sizing: border-box;
     background-color: #817a12;
     background: -webkit-radial-gradient(10);
-    max-width: 20em;
+    width: 20em;
     margin: 0.5rem;
     padding-bottom: 1em;
     display: inline-flex;
@@ -64,6 +61,33 @@
     color: #fff;
     line-height: 1.2;
     align-content: center;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    margin: 15px auto;
+    width: max-content;
+    height: 5px;
+    align-items: center;    
+}
+
+.reloadBtn {
+    background-color: green;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.reloadBtn:hover {
+    background: red;
+    color: #333;
+    transition: all 2000ms ease;
 }
 
 @media(max-width: 600px){

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { getCountryActivities, sortByPopulation } from '../../redux/actions';
-//import styles from './order.module.css'
+import styles from './sortbypopulation.module.css'
 
 export default function SortByPropulation( { setOrder, setCurrentPage } ) {
     const dispatch = useDispatch();    
@@ -21,7 +21,10 @@ export default function SortByPropulation( { setOrder, setCurrentPage } ) {
         return(
             <div>
                 <div> 
-                    <select onChange={e => handleChange(e)}>
+                    <select 
+                        className = { styles.pop }    
+                        onChange={e => handleChange(e)}
+                    >
                         <option value = 'all' key='all'> Sort By Population </option>
                         <option value = 'Low' key= 'low'> Lowest-to-Highest </option>
                         <option value = 'High' key= 'high'> Highest-to-Lowest </option>

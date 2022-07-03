@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountries, getCountryActivities, getActivities, reSetCountryDetails, reSetCountryActivities } from '../../redux/actions';
+import { getCountries, getCountryActivities, getActivities, reSetCountryDetails } from '../../redux/actions';
 import { Link } from 'react-router-dom';
 import Card from '../CountryCard/Card';
 import Pagination from '../Pagination/Pagination';
@@ -11,6 +11,7 @@ import SortByPropulation from '../Sorts/SortByPopulation';
 import styles from '../Home/home.module.css'
 import Activities from '../Filters/Activities';
 import Navbar from '../Nav/NavBar';
+import Loading from '../Loading/Loading';
 
 
 export default function Home(){
@@ -29,6 +30,7 @@ export default function Home(){
     const currentCountries = allCountries.slice(indexOfFirstCountry,indexOfLastCountry);
 
     const [order, setOrder] = useState('');
+    const [loading, setLoading] = useState(true);
 
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -47,8 +49,9 @@ export default function Home(){
     }
 
     return(
+        <div>
+            { loading === true? (<Loading setLoading = { setLoading } />) :
         <section id = { styles.showcase }> 
-
             <Navbar />
             <header className = { styles.header }>
                 <div className = { styles.container }>
@@ -57,59 +60,58 @@ export default function Home(){
                     </div>
                 </div>
             </header>
-            <div>
-                <button onClick = { (e) => { handleReload(e) } }>
-                    Reload countries
-                </button>
-            </div>
-            <div>
-                <SearchBar />
-            </div>
-            <div>
-                <Continents 
-                    setCurrentPage = { setCurrentPage }
-                />
-                <Activities
-                    setCurrentPage = { setCurrentPage }
-                />
-            </div>
 
-            <div>
-                <SortByName
-                    setOrder = { setOrder }
-                    setCurrentPage = { setCurrentPage }
-                />
-                <SortByPropulation
-                    setOrder = { setOrder }
-                    setCurrentPage = { setCurrentPage }
-                />
-            </div>
-            <br/>           
-                <Pagination
-                    countriesPerPage = { countriesPerPage }
-                    allCountries = { allCountries.length }
-                    pagination = { pagination }
-                />
-            <br/>
-            <div>
-            {
-                currentCountries && currentCountries.map( (c) => {
-                    return(
-                        <div className = { styles.card_wrapper } key = { c.id }>
-                            <Link to = { '/home/' + c.id }>
-                                <Card 
-                                    flag = { c.flag } 
-                                    name = { c.name } 
-                                    id = { c.id } 
-                                    continent = { c.continent } 
-                                    key = { c.id } 
-                                />
-                            </Link>
+                    <div>
+                        <button className = { styles.reloadBtn } onClick = { (e) => { handleReload(e) } }>
+                            RELOAD COUNTRIES
+                        </button>
+                    </div>
+                    <section className = { styles.actions }>
+                        <div>
+                            <SearchBar />
                         </div>
-                    );
-                })
-            };
-           </div>
-        </section>                  
+                        <div>
+                            <Continents setCurrentPage = { setCurrentPage } />
+                        </div>
+                        <div>
+                            <Activities setCurrentPage = { setCurrentPage } />
+                        </div>
+                        <div>
+                            <SortByName setOrder = { setOrder } setCurrentPage = { setCurrentPage } />
+                        </div>
+                        <div>
+                            <SortByPropulation setOrder = { setOrder } setCurrentPage = { setCurrentPage } />
+                        </div>
+                    </section>
+                    <br/>           
+                        <Pagination
+                            countriesPerPage = { countriesPerPage }
+                            allCountries = { allCountries.length }
+                            pagination = { pagination }
+                        />
+                    <br/>
+                    <div>
+                        {
+                            currentCountries && currentCountries.map( (c) => {
+                                return(
+                                    <div className = { styles.card_wrapper } key = { c.id }>
+                                        <Link to = { '/home/' + c.id }>
+                                            <Card 
+                                                flag = { c.flag } 
+                                                name = { c.name } 
+                                                id = { c.id } 
+                                                continent = { c.continent } 
+                                                key = { c.id } 
+                                            />
+                                        </Link>
+                                    </div>
+                                );
+                            })
+                        };
+                    </div>
+
+        </section>
+        }
+        </div>                 
     );
 }

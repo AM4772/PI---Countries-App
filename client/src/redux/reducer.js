@@ -53,7 +53,8 @@ function reducer( state = initialState, { type, payload } ) {
             const continentFiltered = payload === 'All' ? allCountries : allCountries.filter((t) => t.continent === payload);
             return {
                 ...state,
-                countryActivities: continentFiltered
+                countryActivities: continentFiltered,
+                countries: continentFiltered
             }
         case "FILTER_BY_ACTIVITY": // filter countries by activity
             const all = state.countries; // all countries array (includes actvities array)
@@ -62,7 +63,9 @@ function reducer( state = initialState, { type, payload } ) {
             // console.log(allFilteredByAct);
             return {
                 ...state,
+                countries: allFilteredByAct,
                 countryActivities: allFilteredByAct
+
             }
         case "SORT_BY_NAME":
             const sortOrder = payload === 'asc' ? state.countryActivities.sort( (a, b) => a.name.localeCompare(b.name) ) : state.countryActivities.sort( (a, b) => b.name.localeCompare(a.name) );

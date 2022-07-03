@@ -1,0 +1,33 @@
+.searchBar input {
+    display: inline;
+    width: 200px;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-right: 5px;
+    background-color: lightyellow;
+    cursor: pointer;
+}
+
+.searchBarBtn {
+    display: inline;
+    width: max-content;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-right: 5px;
+    background-color: brown;
+    cursor: pointer;
+}
+
+.searchBarBtn:hover {
+    color: #333;
+    background-color: yellowgreen;
+    transition: all 1000ms ease-in-out;
+}

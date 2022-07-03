@@ -26,7 +26,7 @@ const dbLoad = async() => {
     }
 };
 
-module.exports = { dbLoad, getAll };
+module.exports = { dbLoad };
 // const getAll = async () =>{
 //     await dbLoad()
 //     return await Country.findAll({                                                  
