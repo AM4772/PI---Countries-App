@@ -23,9 +23,9 @@ export default function Home(){
     const [currentPage, setCurrentPage] = useState(1); 
     // declaro otro estado local y paso 10 paises por pag
     const [countriesPerPage] = useState(10);
-    // seteo el index del ultimo pais en la pagina actual
-    const indexOfLastCountry = currentPage === 1 ? 9 : currentPage * countriesPerPage -1 ;
-    // seteo el index del primer pais en la pagina actual
+    // seteo el index del ultimo pais en la pagina actual en funcion de la pagina en la cual me encuentro
+    const indexOfLastCountry = currentPage === 1 ? 9 : currentPage * countriesPerPage - 1;
+    // seteo el index del primer pais en la pagina actual en funcion de la pagina en la cual me encuentro
     const indexOfFirstCountry = currentPage === 1 ? 0 : indexOfLastCountry - countriesPerPage;
     // setea los paises actuales que se deben renderizar en la pagina seleccionada
     const currentCountries = allCountries.slice(indexOfFirstCountry,indexOfLastCountry);

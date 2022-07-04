@@ -51,6 +51,12 @@ export function getCountryActivities() { // it fetches all countries along with 
     };
 };
 
+// export function reSetCountryActivities(){
+//     return {
+//         type: 'RESET_COUNTRY_ACTIVITIES'
+//     }
+// };
+
 export function getActivities() { // returns all activities in the activity table, used in the filter
     return async (dispatch) => {
         try {

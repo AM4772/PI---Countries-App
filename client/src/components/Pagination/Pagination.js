@@ -3,7 +3,7 @@ import styles from './pagination.module.css';
 
 export default function Pagination ({ countriesPerPage, allCountries, pagination }) {
     const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(allCountries/countriesPerPage); i++) {
+    for (let i = 1; i <= Math.ceil( ( allCountries + 1 ) / countriesPerPage ); i++) {
         pageNumbers.push(i);        
     }
     return(

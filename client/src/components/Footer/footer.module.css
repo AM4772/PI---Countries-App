@@ -1,6 +1,8 @@
 .footerContainer {
-    min-height: 5vh;
     width: 100%;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -24,7 +26,8 @@
 }
 
 #henry {
-    height: 1.5em;
+    height: 1.3em;
+    margin-left: 10px;
 }
 
 #henry:hover {
@@ -32,7 +35,7 @@
 }
 
 .separator {
-    height: 6.5em;
+    height: 3em;
     width: 1px;
     margin: 0 2em;
     background-color: #000;

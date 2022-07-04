@@ -2,8 +2,7 @@ const initialState = {
     countries: [],
     countryById: {},
     countryActivities: [],
-    activities: [],
-    // loading: true,
+    activities: []
 };
 
 function reducer( state = initialState, { type, payload } ) {
@@ -17,7 +16,7 @@ function reducer( state = initialState, { type, payload } ) {
             return {
                 ...state,
                 countries: payload,
-                countryActivities: payload
+                // countryActivities: payload
             }
         case "GET_COUNTRY_ID":
             return {
@@ -35,21 +34,23 @@ function reducer( state = initialState, { type, payload } ) {
                 countryActivities: payload,
                 countries: payload
             }
-        case "RESET_COUNTRY_ACTIVITIES":
-            return {
-                countryActivities: []
-            }
+        // case "RESET_COUNTRY_ACTIVITIES":
+        //     return {
+        //         ...state,
+        //         countryActivities: []
+        //     }
         case "GET_ACTIVITIES": // used in the filter by activity
             return {
                 ...state,
-                activities: payload
+                activities: payload,
             }
         case "POST_ACTIVITY":
             return {
                 ...state
             }
         case "FILTER_BY_CONTINENT": // filter countries by continent
-            const allCountries = state.countries;
+            let allCountries = state.countries; // all countries array
+                // console.log(all);
             const continentFiltered = payload === 'All' ? allCountries : allCountries.filter((t) => t.continent === payload);
             return {
                 ...state,
@@ -57,14 +58,14 @@ function reducer( state = initialState, { type, payload } ) {
                 countries: continentFiltered
             }
         case "FILTER_BY_ACTIVITY": // filter countries by activity
-            const all = state.countries; // all countries array (includes actvities array)
-            // console.log(all);
+            let all = state.countries; // all countries array
+                // console.log(all);
             const allFilteredByAct = payload === 'all-activities' ? all.filter( (a) => a.activities.length > 0) : all.filter( (t) => t.activities && t.activities.map( (b) => b.name ).includes(payload));
             // console.log(allFilteredByAct);
             return {
                 ...state,
-                countries: allFilteredByAct,
-                countryActivities: allFilteredByAct
+                countryActivities: allFilteredByAct,
+                // countries: allFilteredByAct
 
             }
         case "SORT_BY_NAME":
@@ -78,11 +79,6 @@ function reducer( state = initialState, { type, payload } ) {
             return {
                 ...state,
                 countryActivities: sortPopulation
-            }
-        case "SWITCH_LOADING":
-            return {
-                ...state,
-                loading: payload
             }
         default: return state;
     }

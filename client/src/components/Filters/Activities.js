@@ -17,6 +17,7 @@ export default function Activities(){
         e.preventDefault();
         if(e.target.value !== 'all-activities') {
             dispatch(filterByActivity(e.target.value));
+
         } else {
             dispatch(getCountryActivities());
         }
