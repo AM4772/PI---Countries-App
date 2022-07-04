@@ -12,6 +12,7 @@ import styles from '../Home/home.module.css'
 import Activities from '../Filters/Activities';
 import Navbar from '../Nav/NavBar';
 import Loading from '../Loading/Loading';
+import Footer from '../Footer/Footer';
 
 
 export default function Home(){
@@ -112,6 +113,8 @@ export default function Home(){
 
         </section>
         }
-        </div>                 
+        <Footer />    
+        </div>
+             
     );
 }

@@ -5,7 +5,7 @@ import CreateActivity from './components/Form/FormActivity';
 import CountryDetails from './components/CountryDetails/CountryDetails';
 // import About from './components/About/About';
 // import NavBar from './components/Nav/NavBar';
-// import Footer from './components/Footer/Footer';
+
 
 
 function App() {
