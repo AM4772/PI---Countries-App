@@ -14,7 +14,7 @@ export function Continents ({ setCurrentPage }){
         } else {
             dispatch(filterByContinent(e.target.value));
             setCurrentPage(1);
-            setChoice(e.target.value);
+            setChoice('default');
         }
     }    
 

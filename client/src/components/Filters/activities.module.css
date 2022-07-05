@@ -11,3 +11,11 @@
     background-color: rgb(182, 182, 35);
     cursor: pointer;
 }
+
+.activities_h4 {
+    height: 30px;
+    color: red;
+    font-weight: bolder;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+}

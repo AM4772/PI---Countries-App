@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries, getCountryActivities, getActivities, reSetCountryDetails } from '../../redux/actions';
+import { filterByActivity, filterByContinent, sortByCountryName, sortByPopulation } from '../../redux/actions';
 import { Link } from 'react-router-dom';
 import Card from '../CountryCard/Card';
 import Pagination from '../Pagination/Pagination';
@@ -47,6 +48,11 @@ export default function Home(){
     let handleReload = (e) => {
         e.preventDefault();
         dispatch(getCountryActivities());
+        dispatch(filterByActivity());
+        dispatch(filterByContinent());
+        dispatch(sortByCountryName());
+        dispatch(sortByPopulation())
+
     }
 
     return(
