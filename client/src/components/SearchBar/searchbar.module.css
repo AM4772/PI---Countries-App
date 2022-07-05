@@ -1,6 +1,7 @@
 .searchBar input {
     display: inline;
     width: 200px;
+    height: 35px;
     border: none;
     color: #fff;
     font-weight: 600;
@@ -15,6 +16,7 @@
 .searchBarBtn {
     display: inline;
     width: max-content;
+    height: 35px;
     border: none;
     color: #fff;
     font-weight: 600;

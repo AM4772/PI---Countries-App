@@ -1,5 +1,6 @@
 .name {
     width: max-content;
+    height: 35px;
     border: none;
     color: rgb(95, 55, 2);
     font-weight: 600;
