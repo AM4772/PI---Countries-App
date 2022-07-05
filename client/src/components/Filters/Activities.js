@@ -16,13 +16,13 @@ export default function Activities(){
 
     let handleFilterByActivity = (e) => {
         e.preventDefault();
-        if(e.target.value !== 'all-activities') {
+        if(e.target.value !== 'All') {
             dispatch(filterByActivity(e.target.value));
-
+            setChoice(e.target.value);
         } else {
             dispatch(getCountryActivities());
+            setChoice(e.target.value);
         }
-        setChoice(e.target.value);
     }
 
     return(
@@ -34,7 +34,7 @@ export default function Activities(){
                 onChange = { (e) => { handleFilterByActivity(e) } }
             >                    {/* console.log(allAct)*/ }
                 <option value = { choice } disabled>Filter Countries by Activity</option>
-                <option value = 'all-activities'>All</option>
+                <option value = 'All'>All</option>
                 {
                     allAct.map( (i) => { // (console.log(i.name))
                         return (

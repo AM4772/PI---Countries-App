@@ -48,11 +48,6 @@ export default function Home(){
     let handleReload = (e) => {
         e.preventDefault();
         dispatch(getCountryActivities());
-        dispatch(filterByActivity());
-        dispatch(filterByContinent());
-        dispatch(sortByCountryName());
-        dispatch(sortByPopulation())
-
     }
 
     return(
