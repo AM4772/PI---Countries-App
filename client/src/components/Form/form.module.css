@@ -18,7 +18,7 @@
     width: 500px;
     color: red;
     max-width: 500px;
-    min-height: 500px;
+    height: 80vh;
     margin-left: 27vh;
     padding: 0px 0px 0px 0px;
     margin-top: 25px;
@@ -36,7 +36,7 @@
     flex-direction: row-reverse;
     padding: 5px;
     font-weight: 600;
-    color:red;
+    color: red;
 }
 
 .selected_p {
@@ -69,7 +69,7 @@
 
 .form_container label {
     display:block;
-    padding: 0.5rem;
+    padding: 0.2rem;
     font-weight: 600;
     font-size: 18px;
 }
@@ -85,8 +85,9 @@
 }
 
 .form_container textarea {
+    background-color: rgb(235, 255, 122);
     display:block;
-    height: auto;
+    height: 35px;
     width: 100%;
     color: black;
     font-weight: 400;
