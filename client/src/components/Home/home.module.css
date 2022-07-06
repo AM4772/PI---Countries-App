@@ -19,13 +19,13 @@
     background-color: #817a12;
     background: -webkit-radial-gradient(10);
     width: 20em;
-    margin: 0.5rem;
+    margin: 0.25rem;
     padding-bottom: 1em;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     text-align: center;
     border-style: solid;
     border-width: 1px;

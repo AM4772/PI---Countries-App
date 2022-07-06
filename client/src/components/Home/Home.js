@@ -62,7 +62,6 @@ export default function Home(){
                     </div>
                 </div>
             </header>
-
                     <div>
                         <button className = { styles.reloadBtn } onClick = { (e) => { handleReload(e) } }>
                             RELOAD COUNTRIES
@@ -91,7 +90,6 @@ export default function Home(){
                             allCountries = { allCountries.length }
                             pagination = { pagination }
                         />
-                    <br/>
                     <div>
                         {
                             currentCountries && currentCountries.map( (c) => {
