@@ -7,6 +7,7 @@ const router = Router();
 const { getCountries, getCountryById } = require('./CountryRoutes/GetCountryRoutes');
 const { getActivities, getCountryActivities } = require('./ActivityRoutes/GetActivityRoutes');
 const postNewActivity = require('./ActivityRoutes/PostActivityRoutes');
+const deleteActivity = require('./ActivityRoutes/DeleteActivityRoutes');
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
@@ -17,5 +18,6 @@ router.get('/countries/:id', getCountryById);
 router.get('/activities', getActivities);
 router.get('/summary', getCountryActivities);
 router.post('/activities', postNewActivity);
+router.delete('/delete', deleteActivity);
 
 module.exports = router;

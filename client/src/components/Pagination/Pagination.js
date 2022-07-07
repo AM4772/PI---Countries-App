@@ -7,7 +7,6 @@ export default function Pagination ({ countriesPerPage, allCountries, pagination
         return <h1>NO COUNTRIES FOUND!!</h1>;
     } else {
         for (let i = 1; i <= Math.ceil( ( allCountries + 1 ) / countriesPerPage ); i++) {
-            // console.log(Math.ceil( ( allCountries ) / countriesPerPage ))
             pageNumbers.push(i);        
         }
     }
@@ -17,9 +16,9 @@ export default function Pagination ({ countriesPerPage, allCountries, pagination
             <ul className = { styles.pagination }>
                 { 
                     pageNumbers && pageNumbers.map(number => (
-                        <li className = 'number' key = { number }>
+                        <li key = { number }>
                             <a onClick = {() => pagination(number)}>{ number }</a>
-                        </li>
+                        </li>                        
                     ))
                 }
             </ul>

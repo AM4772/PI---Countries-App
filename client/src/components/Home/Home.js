@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries, getCountryActivities, getActivities, reSetCountryDetails } from '../../redux/actions';
-import { filterByActivity, filterByContinent, sortByCountryName, sortByPopulation } from '../../redux/actions';
 import { Link } from 'react-router-dom';
 import Card from '../CountryCard/Card';
 import Pagination from '../Pagination/Pagination';
@@ -14,7 +13,6 @@ import Activities from '../Filters/Activities';
 import Navbar from '../Nav/NavBar';
 import Loading from '../Loading/Loading';
 import Footer from '../Footer/Footer';
-
 
 export default function Home(){
     const dispatch = useDispatch();
@@ -31,8 +29,8 @@ export default function Home(){
     // setea los paises actuales que se deben renderizar en la pagina seleccionada
     const currentCountries = allCountries.slice(indexOfFirstCountry,indexOfLastCountry);
 
-    const [order, setOrder] = useState('');
-    const [loading, setLoading] = useState(true);
+    const [ order, setOrder ] = useState('');
+    const [ loading, setLoading ] = useState(true);
 
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -69,7 +67,7 @@ export default function Home(){
                     </div>
                     <section className = { styles.actions }>
                         <div>
-                            <SearchBar />
+                            <SearchBar setCurrentPage = { setCurrentPage }/>
                         </div>
                         <div>
                             <Continents setCurrentPage = { setCurrentPage } />
@@ -95,7 +93,6 @@ export default function Home(){
                             currentCountries && currentCountries.map( (c) => {
                                 return(
                                     <div className = { styles.card_wrapper } key = { c.id }>
-                                        <Link to = { '/home/' + c.id }>
                                             <Card 
                                                 flag = { c.flag } 
                                                 name = { c.name } 
@@ -103,7 +100,6 @@ export default function Home(){
                                                 continent = { c.continent } 
                                                 key = { c.id } 
                                             />
-                                        </Link>
                                     </div>
                                 );
                             })

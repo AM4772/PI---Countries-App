@@ -12,7 +12,7 @@ export default function Loading ({setLoading}){
              {
                  setTimeout(() =>{
                      setLoading(false)
-                 }, 3000)
+                 }, 2000)
              }
          </div>
      </div>

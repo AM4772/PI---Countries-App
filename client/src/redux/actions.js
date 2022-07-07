@@ -83,6 +83,20 @@ export function postActivity(payload) { // it creates a new activity and associa
     };
 };
 
+export function deleteActivity(payload) { // it deletes an activity and its associations
+    return async () => {
+        try {
+            var res = await axios.delete('http://localhost:3001/delete?name=' + payload);
+            console.log(res);
+            alert(res.data);
+            return res;
+        } catch(error){
+            if(error.response) console.log(error.response.data);
+            alert(error.response.data);
+        }
+    };
+};
+
 export function filterByContinent(payload) {
     // console.log(payload);
     return {

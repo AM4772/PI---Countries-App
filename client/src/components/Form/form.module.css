@@ -40,8 +40,19 @@
 }
 
 .selected_p {
-    width: max-content;
+    width:max-content;
     padding-bottom: 5px;
+}
+
+.selected_error {
+    background-color: red;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bolder;
+    width:max-content;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
 }
 
 .selected_btn {
@@ -138,3 +149,22 @@
     transition: all 2000ms ease;
 }
 
+.form_reset {
+    float: right;
+    background-color: green;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: none;
+    margin: 0 auto;
+    width: 150px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.form_reset:hover {
+    background: red;
+    color: #333;
+    transition: all 2000ms ease;
+}

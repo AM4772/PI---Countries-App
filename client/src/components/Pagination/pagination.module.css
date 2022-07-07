@@ -15,11 +15,10 @@
   float: left;
   padding: 6px 12px;
   text-decoration: none;
-  transition: background-color .3s;
   border: 1px solid darkgrey;
 }
 
-.pagination li a.active {
+.pagination a.is-active {
   background-color: #4CAF50;
   color: white;
   border: 1px solid #4CAF50;

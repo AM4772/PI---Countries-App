@@ -51,6 +51,10 @@ function reducer( state = initialState, { type, payload } ) {
             return {
                 ...state
             }
+        case "DELETE_ACTIVITY":
+            return {
+                ...state
+            }
         case "FILTER_BY_CONTINENT": // filter countries by continent
             let allCountries = state.countryActivities3; // all countries array
                 // console.log(all);

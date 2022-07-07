@@ -4,11 +4,22 @@ import { Link } from 'react-router-dom';
 import { getCountryById, reSetCountryDetails } from '../../redux/actions';
 import styles from './countrydetails.module.css';
 
+
+
 export default function CountryDetails(props) {
     // console.log(props);
     const dispatch = useDispatch();
     const myCountry = useSelector((state) => state.countryById);
     console.log(myCountry);
+
+    // let actArrayCheck = () => {
+    //     if(myCountry.activities.length > 0){
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
     useEffect(() => {
         dispatch(getCountryById(props.match.params.id));
     }, [dispatch, props.match.params.id]);
@@ -33,7 +44,6 @@ export default function CountryDetails(props) {
                     <div className = { styles.card_details }>
                         <div className = { styles.card_details_name }>Country: { myCountry.name }</div>
                         <p className = { styles.card_details_p }>Country ID: { myCountry.id }</p>
-
                         <p className = { styles.card_details_p }>Continent: { myCountry.continent }</p>
                         <p className = { styles.card_details_p }>Region: { myCountry.subregion }</p>
                         <p className = { styles.card_details_p }>Capital: { myCountry.capital }</p>
@@ -41,19 +51,24 @@ export default function CountryDetails(props) {
                         <p className = { styles.card_details_p }>Population: { myCountry.population }</p>
                         <div className = { styles.activity_title }> Tourist Activities: </div>
                         <div className = { styles.activity_wrapper }>
-                            { 
+                            {                          
                                 myCountry.activities?.map( (a) => {
-                                    return(
-                                        <ul className = { styles.activity } key = { a.id }>
-                                            <li>Activity: { a.name } </li>
-                                            <li>Difficulty: { a.difficulty } </li>
-                                            <li>Duration: { a.duration } </li>
-                                            <li>Season: { a.season } </li>
-                                            <li>Description: { a.description } </li>
-                                        </ul>
-                                )})
+                                    // if(actArrayCheck()){
+                                            return(
+                                                <ul className = { styles.activity } key = { a.id }>
+                                                    <li>Activity: { a.name } </li>
+                                                    <li>Difficulty: { a.difficulty } </li>
+                                                    <li>Duration: { a.duration } </li>
+                                                    <li>Season: { a.season } </li>
+                                                    <li>Description: { a.description } </li>
+                                                </ul>
+                                            )
+                                        // } else {
+                                        //     return 'No activities found.';
+                                        // }
+                                })
                             }
-                        </div>
+                        </div> 
                     </div> : <p>Loading...</p>
                 }
                 <br/>

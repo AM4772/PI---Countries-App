@@ -15,7 +15,7 @@ const Validation = (state) => {
     } else if(isNaN(state.name) !== true){
         errors.name = 'Activity name cannot be a number.';
     } else if(state.name.length > 140){
-        errors.name = 'Keep length to a max of 140 characters.';
+        errors.name = 'Exceeded character length (max 140).';
     } else if(!state.difficulty){
         errors.difficulty = 'Difficulty is a required field, please select one.';
     } else if(!state.duration){
@@ -40,7 +40,7 @@ export default function CreateActivity() {
     const countries = useSelector((state) => state.countries);
     const [ state, setState ] = useState({
         name: '',
-        difficulty: 'Select',
+        difficulty: '',
         duration: '',
         season: '',
         description: '',
@@ -48,6 +48,7 @@ export default function CreateActivity() {
     });
     const [ errors, setErrors ] = useState({});
     const [ loading, setLoading ] = useState(true);
+    const [ choice, setChoice ] = useState();
 
     function handleChange(e) {
         setState({
@@ -64,6 +65,7 @@ export default function CreateActivity() {
                 ...state,
                 selectedCountries: [ ...state.selectedCountries, e.target.value]
             });
+            setChoice('default');
         } else {
             return alert('You have already added this country to the list. Please select another country or continue filling out the form.');
         }
@@ -75,21 +77,13 @@ export default function CreateActivity() {
         setErrors(Validation(state));
         const saveErrors = Validation(state);
         if(Object.values(saveErrors).length !== 0 || state.selectedCountries.length < 1){
-            alert('Please, complete all fields before submitting.');
+            alert('Please, check if all fields were filled out or if you had errors.');
             history.push('/activity');
-            setState({
-                name: '',
-                difficulty: 'Select',
-                duration: '',
-                season: '',
-                description: '',
-                selectedCountries: []
-            })
         } else {
             dispatch(postActivity(state));
             setState({
                 name: '',
-                difficulty: 'Select',
+                difficulty: '',
                 duration: '',
                 season: '',
                 description: '',
@@ -106,13 +100,25 @@ export default function CreateActivity() {
         })
     }
 
+    function handleReset(e) {
+        setState({
+            name: '',
+            difficulty: '',
+            duration: '',
+            season: '',
+            description: '',
+            selectedCountries: []
+        })
+        history.push('/activity')
+    }
+
     useEffect(() => {
         dispatch(getCountries());
     }, [dispatch]);
 
     return(
         <div>
-            { loading === true? (<Loading setLoading = { setLoading }/>) :
+            { loading === true? (<Loading setLoading = { setLoading }/>) : 
         <section id = { styles.showcase }>
             <Navbar />
             <div className = { styles.form_container }>
@@ -123,10 +129,12 @@ export default function CreateActivity() {
                         <label for = 'countries'>Countries...*  </label>
                         <select 
                             id = 'countries'
+                            value = { choice }
+                            defaultValue = { 'default' }
                             required = 'required'
                             onChange = { (e) => handleSelect(e) }
                             >
-                            <option>Select a country (min required 1)</option>
+                            <option value = { 'default' } disabled>Select a country (min required 1)</option>
                             { 
 
                                 countries.map( (c) => (
@@ -135,20 +143,24 @@ export default function CreateActivity() {
                                 ))
                             }
                         </select>
+                        {errors.selectedCountries && (
+                            <p className = { styles.selected_error }>{errors.selectedCountries}</p>
+                        )}
                     </div>
                     <div>
                         <label for = 'act_name'>Activity name*: </label>
                         <textarea
                             id = 'act_name'
                             type = 'text'
+                            maxLength = { 140 }
                             value = { state.name }
                             name = 'name'
                             required = 'required'
                             onChange = { (e) => handleChange(e) }
-                            placeholder = 'Surfing in Maui, Hawai'
+                            placeholder = 'Surfing in Maui, Hawai .... (max length 140 characters).'
                         ></textarea>
                             {errors.name && (
-                                <p>{errors.name}</p>
+                                <p className = { styles.selected_error }>{errors.name}</p>
                             )}
                     </div>
                     <div>
@@ -160,8 +172,9 @@ export default function CreateActivity() {
                             name = 'difficulty'
                             required = 'required'
                             onChange = { (e) => handleChange(e) }
+                            placeholder = 'Select...'
                         >
-                            <option value = 'Select'>Select...</option>
+                            <option value  = '' disabled>Select...</option>  
                             <option value = {1} defaultValue> 1 (piece of cake!)</option>
                             <option value = {2}> 2 (half a piece of cake!)</option>
                             <option value = {3}> 3 (fifty, fifty)</option>
@@ -169,7 +182,7 @@ export default function CreateActivity() {
                             <option value = {5}> 5 (check your pulse!)</option>
                         </select>
                             {errors.difficulty && (
-                                <p>{errors.difficulty}</p>
+                                <p className = { styles.selected_error }>{errors.difficulty}</p>
                             )}
                     </div>
                     <div>
@@ -182,10 +195,10 @@ export default function CreateActivity() {
                             name = 'duration'
                             required = 'required'
                             onChange = { (e) => handleChange(e) }
-                            placeholder = 'Xmpl: 2 hours'
+                            placeholder = 'Xmpl: 2 hours (max length 9 characters).'
                         ></textarea>
                             {errors.duration && (
-                                <p>{errors.duration}</p>
+                                <p className = { styles.selected_error }>{errors.duration}</p>
                             )}
                     </div>
                     <div>
@@ -198,7 +211,7 @@ export default function CreateActivity() {
                                 required = 'required'
                                 onChange = { (e) => handleChange(e) }
                             >
-                                <option value  = ''>Select...</option>    
+                                <option value  = '' disabled>Select...</option>    
                                 <option value = { 'Any' } defaultValue> Any </option>
                                 <option value = { 'Summer' }> Summer </option>
                                 <option value = { 'Fall' }> Fall </option>
@@ -206,7 +219,7 @@ export default function CreateActivity() {
                                 <option value = { 'Spring' }> Spring </option>
                             </select>
                                 {errors.season && (
-                                    <p>{errors.season}</p>
+                                    <p className = { styles.selected_error }>{errors.season}</p>
                                 )}
                     </div>
                     <div>
@@ -225,11 +238,12 @@ export default function CreateActivity() {
                         >
                         </textarea>
                             {errors.description && (
-                                <p>{errors.description}</p>
+                                <p className = { styles.selected_error }>{errors.description}</p>
                             )}
                     </div>
                     <br/>
                     <button id = 'sendBtn' className = { styles.form_send } type = 'submit'>CREATE ACTIVITY</button>
+                    <button id = 'reSetBtn' className = { styles.form_reset } onClick = { (e) => handleReset(e) }>RESET FORM</button>
                     <br/>
                 </form>
             </div>
@@ -242,9 +256,6 @@ export default function CreateActivity() {
                     </div>
                 )
             }
-            {   errors.selectedCountries && (
-                    <p>{errors.selectedCountries}</p>
-            )}
             </div>
         </section>
         } 
