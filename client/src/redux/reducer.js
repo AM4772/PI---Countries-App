@@ -18,7 +18,10 @@ function reducer( state = initialState, { type, payload } ) {
             return {
                 ...state,
                 countries: payload,
+                countryActivities3: payload,
+                countryActivities2: payload,
                 countryActivities: payload
+
             }
         case "GET_COUNTRY_ID":
             return {
@@ -62,7 +65,7 @@ function reducer( state = initialState, { type, payload } ) {
             return {
                 ...state,
                 countryActivities2: continentFiltered,
-                countryActivities: continentFiltered
+                countryActivities: continentFiltered,
             }
         case "FILTER_BY_ACTIVITY": // filter countries by activity
             let all = state.countryActivities2; // all countries array

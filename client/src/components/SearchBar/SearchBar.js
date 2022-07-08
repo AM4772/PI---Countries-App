@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useHistory, useLocation } from 'react-router-dom';
+// import { Link, useHistory, useLocation } from 'react-router-dom';
 import { getCountry } from "../../redux/actions";
 import styles from './searchbar.module.css';
 
@@ -30,7 +30,7 @@ export default function SearchBar ({ setCurrentPage }){
     const handleSubmit = (e) => {
         e.preventDefault();
         // if(!params){
-            dispatch(getCountry(name));  
+            dispatch(getCountry(name));   
             setCurrentPage(1);
         // } else {
         //     dispatch(getCountry(params));

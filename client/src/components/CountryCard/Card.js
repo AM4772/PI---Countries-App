@@ -7,9 +7,7 @@ let Card = ( { flag, name, id, continent }) => {
         return(
             <div className = { styles.card }>
                 <img className = { styles.card__image } src = { flag } alt = 'flag not found' />
-                    <Link to = {`/countries/${ id }`}>
-                    { name }       
-                    </Link>
+                    <Link to = {`/countries/${ id }`}> { name } </Link>
                     <p>{ continent }</p>      
             </div> 
         );

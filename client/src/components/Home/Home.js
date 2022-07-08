@@ -93,6 +93,7 @@ export default function Home(){
                             currentCountries && currentCountries.map( (c) => {
                                 return(
                                     <div className = { styles.card_wrapper } key = { c.id }>
+                                        <Link to = {'/home/' + c.id}>
                                             <Card 
                                                 flag = { c.flag } 
                                                 name = { c.name } 
@@ -100,6 +101,7 @@ export default function Home(){
                                                 continent = { c.continent } 
                                                 key = { c.id } 
                                             />
+                                        </Link>
                                     </div>
                                 );
                             })
