@@ -14,10 +14,9 @@
 }
 
 .card_wrapper {
-    height: 275px;
+    height: 250px;
     box-sizing: border-box;
     background-color: #817a12;
-    background: -webkit-radial-gradient(10);
     width: 20em;
     margin: 0.25rem;
     padding-bottom: 1em;

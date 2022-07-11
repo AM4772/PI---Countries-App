@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'; // imported to handle store
 import store from './redux/store';
+// import dotenv from 'dotenv'; // to deploy
+// import axios from 'axios'; // to deploy
+// dotenv.config(); // to deploy
+
+// axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001'; // to deploy
 
 ReactDOM.render( // only one ReactDOM per app
   <Provider store = { store }> 

@@ -15,14 +15,15 @@
 
 .card {
     flex: 1;
-    height: 250px;
+    /* height: 175px; */
     background-color: #493003;
-    margin: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 20px gray;
+    margin: 15px;
+    /* overflow: hidden;
+    box-shadow: 0 2px 20px gray; */
     border-radius: 0.5rem;
     cursor: pointer;
     transition: transform 1000ms ease-in;
+    padding-bottom: 5px;
 }
 
 .card:hover {
@@ -30,7 +31,7 @@
 }
 
 .card__image {
-    height: 185px;
+    height: 150px;
     width: 100%;
     background-size: cover;
     margin-bottom: 5px;

@@ -18,10 +18,9 @@ function reducer( state = initialState, { type, payload } ) {
             return {
                 ...state,
                 countries: payload,
-                countryActivities3: payload,
-                countryActivities2: payload,
-                countryActivities: payload
-
+                // countryActivities2: payload,
+                countryActivities: payload,
+                // countryActivities3: payload
             }
         case "GET_COUNTRY_ID":
             return {

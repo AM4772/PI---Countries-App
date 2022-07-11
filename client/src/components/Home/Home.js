@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries, getCountryActivities, getActivities, reSetCountryDetails } from '../../redux/actions';
-import { Link } from 'react-router-dom';
 import Card from '../CountryCard/Card';
 import Pagination from '../Pagination/Pagination';
-import SearchBar from '../SearchBar/SearchBar';
 import { Continents } from '../Filters/Continents';
 import SortByName from '../Sorts/SortByName';
 import SortByPropulation from '../Sorts/SortByPopulation';
@@ -13,19 +11,24 @@ import Activities from '../Filters/Activities';
 import Navbar from '../Nav/NavBar';
 import Loading from '../Loading/Loading';
 import Footer from '../Footer/Footer';
+import { SearchBar } from '../SearchBar/SearchBar';
+import { Link } from 'react-router-dom';
 
 export default function Home(){
     const dispatch = useDispatch();
     //const allCountries = useSelector((state) => state.countries);
     const allCountries = useSelector((state) => state.countryActivities);
+    // const oneCountry = useSelector((state) => state.countries);
     // declaro un estado local y paso la pagina actual (arranca en 1) + cual va a ser la pagina actual
     const [currentPage, setCurrentPage] = useState(1); 
     // declaro otro estado local y paso 10 paises por pag
-    const [countriesPerPage] = useState(10);
+    const [countriesPerPage] = useState(8);
     // seteo el index del ultimo pais en la pagina actual en funcion de la pagina en la cual me encuentro
-    const indexOfLastCountry = currentPage === 1 ? 9 : currentPage * countriesPerPage - 1;
+    // const indexOfLastCountry = currentPage === 1 ? 9 : currentPage * countriesPerPage - 1; // para PI
+    const indexOfLastCountry = currentPage * countriesPerPage;
     // seteo el index del primer pais en la pagina actual en funcion de la pagina en la cual me encuentro
-    const indexOfFirstCountry = currentPage === 1 ? 0 : indexOfLastCountry - countriesPerPage;
+    // const indexOfFirstCountry = currentPage === 1 ? 0 : indexOfLastCountry - countriesPerPage; // para PI
+    const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
     // setea los paises actuales que se deben renderizar en la pagina seleccionada
     const currentCountries = allCountries.slice(indexOfFirstCountry,indexOfLastCountry);
 
@@ -67,7 +70,7 @@ export default function Home(){
                     </div>
                     <section className = { styles.actions }>
                         <div>
-                            <SearchBar setCurrentPage = { setCurrentPage }/>
+                            <SearchBar setCurrentPage = { setCurrentPage } />
                         </div>
                         <div>
                             <Continents setCurrentPage = { setCurrentPage } />
@@ -93,13 +96,13 @@ export default function Home(){
                             currentCountries && currentCountries.map( (c) => {
                                 return(
                                     <div className = { styles.card_wrapper } key = { c.id }>
-                                        <Link to = {'/home/' + c.id}>
+                                        <Link to = { '/countries/'+ c.id }>
                                             <Card 
                                                 flag = { c.flag } 
                                                 name = { c.name } 
                                                 id = { c.id } 
                                                 continent = { c.continent } 
-                                                key = { c.id } 
+                                                key = { c.id }
                                             />
                                         </Link>
                                     </div>

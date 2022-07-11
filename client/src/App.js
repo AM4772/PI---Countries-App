@@ -6,8 +6,6 @@ import CountryDetails from './components/CountryDetails/CountryDetails';
 // import About from './components/About/About';
 // import NavBar from './components/Nav/NavBar';
 
-
-
 function App() {
   return (
     <BrowserRouter>
