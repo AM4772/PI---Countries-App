@@ -1,0 +1,11 @@
+{
+    "watch": ["src/"],
+    "ignore": ["dist/", "node_modules", ".git"],
+    "ext": "js,json",
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "execMap": {
+      "js": "node"
+    }
+  }
