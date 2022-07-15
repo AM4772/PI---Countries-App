@@ -21,9 +21,11 @@ const server = require('./src/app.js');
 const { dbLoad } = require('./src/controllers/DbloaderController.js');
 const { conn } = require('./src/db.js');
 
+const PORT = process.env.PORT || '3001';
+
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, async () => { // for deployment with Heroku: change 3001 to process.env.PORT
+  server.listen(PORT, async () => { // for deployment with Heroku: change 3001 to process.env.PORT
     console.log('%s listening at 3001'); // eslint-disable-line no-console
     await dbLoad();
   });
