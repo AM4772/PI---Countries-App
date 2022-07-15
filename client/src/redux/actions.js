@@ -3,7 +3,8 @@ import axios from 'axios';
 export function getCountries() { // it fetches all countries
     return async (dispatch) => {
         try {
-            var res = await axios('http://localhost:3001/countries');
+            var res = await axios('/countries');
+            // var res = await axios('http://localhost:3001/countries');
             return dispatch({type: "GET_COUNTRIES", payload: res.data});
         } catch(error){
             console.log(error);
@@ -14,7 +15,7 @@ export function getCountries() { // it fetches all countries
 export function getCountry(name) { // it fetches a country by name
     return async (dispatch) => {
         try {
-            var res = await axios(`http://localhost:3001/countries?name=${name}`);
+            var res = await axios(`/countries?name=${name}`);
             // console.log(res);
             return dispatch({type: "GET_COUNTRY_NAME", payload: res.data});
         } catch(error){
@@ -26,7 +27,7 @@ export function getCountry(name) { // it fetches a country by name
 export function getCountryById(id) { // it fetches a country by country code
     return async (dispatch) => {
         try {
-            var res = await axios(`http://localhost:3001/countries/${id}`);
+            var res = await axios(`/countries/${id}`);
             return dispatch({type: "GET_COUNTRY_ID", payload: res.data});
         } catch(error){
             console.log(error);
@@ -43,7 +44,7 @@ export function reSetCountryDetails(){
 export function getCountryActivities() { // it fetches all countries along with their associated activities
     return async (dispatch) => {
         try {
-            var res = await axios('http://localhost:3001/summary');
+            var res = await axios('/summary');
             return dispatch({type: "GET_COUNTRY_ACTIVITIES", payload: res.data});
         } catch(error){
             console.log(error);
@@ -60,7 +61,7 @@ export function reSetCountryActivities(){
 export function getActivities() { // returns all activities in the activity table, used in the filter
     return async (dispatch) => {
         try {
-            var res = await axios('http://localhost:3001/activities');
+            var res = await axios('/activities');
             return dispatch({type: "GET_ACTIVITIES", payload: res.data});
         } catch(error){
             console.log(error);
@@ -71,7 +72,7 @@ export function getActivities() { // returns all activities in the activity tabl
 export function postActivity(payload) { // it creates a new activity and associates it with a country
     return async () => {
         try {
-            var res = await axios.post('http://localhost:3001/activities', payload);
+            var res = await axios.post('/activities', payload);
             console.log(res);
             alert(res.data);
             return res;
@@ -86,7 +87,7 @@ export function postActivity(payload) { // it creates a new activity and associa
 export function deleteActivity(payload) { // it deletes an activity and its associations
     return async () => {
         try {
-            var res = await axios.delete('http://localhost:3001/delete?name=' + payload);
+            var res = await axios.delete('/delete?name=' + payload);
             console.log(res);
             alert(res.data);
             return res;

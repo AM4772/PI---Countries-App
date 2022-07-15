@@ -3,11 +3,12 @@ import LandingPage from './components/LandingPage/Landing';
 import Home from './components/Home/Home';
 import CreateActivity from './components/Form/FormActivity';
 import CountryDetails from './components/CountryDetails/CountryDetails';
+import { SearchBar } from './components/SearchBar/SearchBar';
 // import About from './components/About/About';
-// import NavBar from './components/Nav/NavBar';
+// import NavBar from './components/Nav/NavBar';  
 
 function App() {
-  return (
+  return (  
     <BrowserRouter>
       <div className="App">
         <Switch>
