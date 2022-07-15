@@ -23,12 +23,13 @@
     "morgan": "^1.10.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.21.0"
+    "sequelize": "^6.21.0",
+    "nodemon": "^2.0.19"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
-    "nodemon": "^2.0.6",
+    "nodemon": "^2.0.19",
     "supertest": "^6.0.1",
     "supertest-session": "^4.1.0"
   }
