@@ -21,6 +21,15 @@ Technologies used:
 
 The functionalities required to move on to the next instance in the bootcamp were: Landing page, Navbar, Search (by country name), Filter (by continent and touristic activity), Sorts (asc and desc), pagination, Create a touristic activity, Validations and a pleasant graphical UI. This link will take you to the web page: **[Countries App](https://pi-countries-app.vercel.app/  "Countries App")**, *let me know your comments and suggestions!*
 
+<h3> 🤝🏻 &nbsp;Connect with Me </h3>
+
+<p align="center">
+<a href="https://www.linkedin.com/in/aldo-moro/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Aldo%20Moro-blue?style=flat-square&logo=linkedin"></a>
+<a href="mailto:moro_bramanti@hotmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-moro_bramanti@hotmail.com-blue?style=flat-square&logo=outlook"></a>
+</p>
+
+⭐️ From [AM4772](https://github.com/AM4772)
+
 ## How to use it locally
 
 If you clone this repository you will get two folders: `api` and `client`, where are located back-end and front-end code. You must create a `.env` into `api` folder and provide the following information inside of it:
@@ -35,8 +44,4 @@ Where `PostgresUser` and `PostgresPassword` mean your personal information to co
 
 In order to finish the set up you must create a Postgres DB named `countries` (or the same name you put into de env document), where all generated data will be located.
 
-You can check it working at this [link](https://countries-app-sigma.vercel.app/).
 
-Contact me if needed!
-
-[LinkedIn](https://www.linkedin.com/in/agustin-gallego/)
