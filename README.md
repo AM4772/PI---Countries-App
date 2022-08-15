@@ -23,6 +23,8 @@ Technologies used:
 
 The functionalities required to move on to the next instance in the bootcamp were: Landing page, Navbar, Search (by country name), Filter (by continent and touristic activity), Sorts (asc and desc), pagination, Create a touristic activity, Validations and a pleasant graphical UI. This link will take you to the web page: **[Countries App](https://pi-countries-app.vercel.app/  "Countries App")**, *let me know your comments and suggestions!*
 
+PS: I will continue improving it and adding more functionalities.
+
 <h3> 🤝🏻 &nbsp;Connect with Me </h3>
 
 <p align="center">
