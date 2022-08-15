@@ -9,17 +9,17 @@ This application was one of the requirements of **Henry's Full Stack Developer B
 
 Technologies used:
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript)   
-![React](https://img.shields.io/badge/-React-333333?style=flat&logo=react)  
-![Redux](https://img.shields.io/badge/-Redux-333333?style=flat&logo=redux)  
-![HTML5](https://img.shields.io/badge/-HTML5-333333?style=flat&logo=HTML5)  
-![CSS](https://img.shields.io/badge/-CSS-333333?style=flat&logo=CSS3&logoColor=1572B6)  
-![Node.js](https://img.shields.io/badge/-Node.js-333333?style=flat&logo=node.js)  
-![Express](https://img.shields.io/badge/-Express-333333?style=flat&logo=express)  
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-333333?style=flat&logo=postgreSQL)   
-![Sequelize](https://img.shields.io/badge/-Sequelize-333333?style=flat&logo=Sequelize)  
-  ![Git](https://img.shields.io/badge/-Git-333333?style=flat&logo=git)  
-  ![GitHub](https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github)
+![JavaScript](https://img.shields.io/badge/-JavaScript-696969?style=flat&logo=javascript)   
+![React](https://img.shields.io/badge/-React-696969?style=flat&logo=react)  
+![Redux](https://img.shields.io/badge/-Redux-696969?style=flat&logo=redux)  
+![HTML5](https://img.shields.io/badge/-HTML5-696969?style=flat&logo=HTML5)  
+![CSS](https://img.shields.io/badge/-CSS-696969?style=flat&logo=CSS3&logoColor=1572B6)  
+![Node.js](https://img.shields.io/badge/-Node.js-696969?style=flat&logo=node.js)  
+![Express](https://img.shields.io/badge/-Express-696969?style=flat&logo=express)  
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-696969?style=flat&logo=postgreSQL)   
+![Sequelize](https://img.shields.io/badge/-Sequelize-696969?style=flat&logo=Sequelize)  
+  ![Git](https://img.shields.io/badge/-Git-696969?style=flat&logo=git)  
+  ![GitHub](https://img.shields.io/badge/-GitHub-696969?style=flat&logo=github)
 
 The functionalities required to move on to the next instance in the bootcamp were: Landing page, Navbar, Search (by country name), Filter (by continent and touristic activity), Sorts (asc and desc), pagination, Create a touristic activity, Validations and a pleasant graphical UI. This link will take you to the web page: **[Countries App](https://pi-countries-app.vercel.app/  "Countries App")**, *let me know your comments and suggestions!*
 
@@ -57,7 +57,7 @@ The functionalities required to move on to the next instance in the bootcamp wer
         DB_NAME=countries
         PORT=3001
     ```
-- In **![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-ffffff?style=flat&logo=postgreSQL)**, you must create a new database named **countries**.
+- In ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-696969?style=flat&logo=postgreSQL), you must create a new database named **countries**.
 - The content inside the `client` folder was created using **`Create React App`**.
 - To run the app in your localhost, first run the command `npm start` from the `api` folder and then do the same from the `client` folder. This should open up a browser where you will see the app running.
 
