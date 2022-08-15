@@ -5,7 +5,7 @@
 
 ## About the App
 
-This application was one of the requirements of **Henry's Full Stack Developer Bootcamp** using `only` the technologies taught during the course.
+This application was one of the requirements of **Henry's Full Stack Developer Bootcamp**. We were `only` allowed to use the technologies taught during the course.
 
 Technologies used:
 
@@ -17,7 +17,9 @@ Technologies used:
 ![Node.js](https://img.shields.io/badge/-Node.js-333333?style=flat&logo=node.js)  
 ![Express](https://img.shields.io/badge/-Express-333333?style=flat&logo=express)  
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-333333?style=flat&logo=postgreSQL)   
-![Sequelize](https://img.shields.io/badge/-Sequelize-333333?style=flat&logo=Sequelize)
+![Sequelize](https://img.shields.io/badge/-Sequelize-333333?style=flat&logo=Sequelize)  
+  ![Git](https://img.shields.io/badge/-Git-333333?style=flat&logo=git)  
+  ![GitHub](https://img.shields.io/badge/-GitHub-333333?style=flat&logo=github)
 
 The functionalities required to move on to the next instance in the bootcamp were: Landing page, Navbar, Search (by country name), Filter (by continent and touristic activity), Sorts (asc and desc), pagination, Create a touristic activity, Validations and a pleasant graphical UI. This link will take you to the web page: **[Countries App](https://pi-countries-app.vercel.app/  "Countries App")**, *let me know your comments and suggestions!*
 
