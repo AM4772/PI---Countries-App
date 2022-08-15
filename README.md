@@ -57,7 +57,7 @@ The functionalities required to move on to the next instance in the bootcamp wer
         DB_NAME=countries
         PORT=3001
     ```
-- In PostgreSQL, you must create a new database named **countries**.
+- In **![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-ffffff?style=flat&logo=postgreSQL)**, you must create a new database named **countries**.
 - The content inside the `client` folder was created using **`Create React App`**.
 - To run the app in your localhost, first run the command `npm start` from the `api` folder and then do the same from the `client` folder. This should open up a browser where you will see the app running.
 
