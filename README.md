@@ -32,16 +32,31 @@ The functionalities required to move on to the next instance in the bootcamp wer
 
 ## How to use it locally
 
-If you clone this repository you will get two folders: `api` and `client`, where are located back-end and front-end code. You must create a `.env` into `api` folder and provide the following information inside of it:
+- You must install in your computer:
+    - A text editor like **`Visual Studio Code`** or **`Sublime`**, etc.
+    - **`Git`**, link to instructions: [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "Instructions Git")
+    - **`PostgreSQL`**, link to instructions: [PostgreSQL](https://www.postgresql.org/download/ "Instructions PostgreSQL")
+- Up to the right of this page, you will see a green button named "Code". Click on it and copy the HTTPS address to this repository.
+- In your text editor, place the cursor in the desired folder, paste the HTTPS address and hit Enter. This will download the repository to your computer. You will see the same folder structure and files as you see at the top of this page. Next, run the following commands inside the folder `npm install` and then `npm init`.
+- Now you must install all the required dependencies for the front-end and back-end:
+    - Front-end: place cursor inside `client`folder and run the following command:
+    ```bash
+        npm install axios dotenv-webpack react react-dom react-router-dom react-scripts react-select redux redux-thunk web-vitals 
+    ```
+    - Back-end: place cursor inside `api`folder and run the following command:
+    ```bash
+        npm install axios body-parser cookie-parser cors dotenv express morgan index.js nodemon pg pg-hstore sequelize chai mocha supertest supertest-session node
+    ```
+- In the `api` folder, create a `.env` file with the following content:
+    ```javascript
+        DB_USER=postgres
+        DB_PASSWORD=`your PostgreSQL password` // this is the one you created when downloading the software
+        DB_HOST=localhost
+        DB_NAME=countries
+        PORT=3001
+    ```
+- In PostgreSQL, you must create a new database named **countries**.
+- The content inside the `client` folder was created using **`Create React App`**.
+- To run the app in your localhost, first run the command `npm start` from the `api` folder and then do the same from the `client` folder. This should open up a browser where you will see the app running.
 
-    DB_USER=PostgresUser
-    DB_PASSWORD=PostgresPassword
-    DB_HOST=localhost
-    DB_NAME=countries
-    PORT=3001
-
-Where `PostgresUser` and `PostgresPassword` mean your personal information to connect to Postgres. `DB_NAME` and `PORT` can be modified in case it is needed.
-
-In order to finish the set up you must create a Postgres DB named `countries` (or the same name you put into de env document), where all generated data will be located.
-
-
+### 🤝🏻 &nbsp;Contact me if you have any problems with my instructions
