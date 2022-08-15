@@ -5,7 +5,7 @@
 
 ## About the App
 
-This application was one of the requirements of **Henry's Full Stack Developer Bootcamp**. We were `only` allowed to use the technologies taught during the course.
+This application was one of the requirements of **Henry's Full Stack Developer Bootcamp**. We were **`only`** allowed to use the technologies taught during the course.
 
 Technologies used:
 
