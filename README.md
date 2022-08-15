@@ -1,6 +1,6 @@
 # COUNTRIES APP
 
-![countries-home](/countries.png)
+![countries-home](/Countries.PNG)
 
 
 ## About the App
