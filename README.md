@@ -32,7 +32,7 @@ PS: I will continue improving it and adding more functionalities.
 <a href="mailto:moro_bramanti@hotmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-moro_bramanti@hotmail.com-blue?style=flat-square&logo=outlook"></a>
 </p>
 
-⭐️ From [AM4772](https://github.com/AM4772)
+⭐️ Link to my ![GitHub](https://img.shields.io/badge/-GitHub-696969?style=flat&logo=github) profile: [AM4772](https://github.com/AM4772)
 
 ## How to use it locally
 
@@ -63,4 +63,4 @@ PS: I will continue improving it and adding more functionalities.
 - The content inside the `client` folder was created using **`Create React App`**.
 - To run the app in your localhost, first run the command `npm start` from the `api` folder and then do the same from the `client` folder. This should open up a browser where you will see the app running.
 
-### 🤝🏻 &nbsp;Contact me if you have any problems with my instructions
+### 🤝🏻 &nbsp;Contact me if you have any problems with the instructions
