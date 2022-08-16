@@ -25,7 +25,7 @@ The functionalities required to move on to the next instance in the bootcamp wer
 
 PS: I will continue improving it and adding more functionalities.
 
-<h3> 🤝🏻 &nbsp;Connect with Me </h3>
+<h3> 🤝🏻 &nbsp;Connect with me through </h3>
 
 <p align="center">
 <a href="https://www.linkedin.com/in/aldo-moro/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Aldo%20Moro-blue?style=flat-square&logo=linkedin"></a>
