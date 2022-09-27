@@ -1,38 +1,106 @@
-.card a {
-    color: white;
-    font-weight: bolder;
-}
-
-.card a:hover {
-    color: green;
-}
-
-.card p {
-    text-decoration: none;
-    color: white;
-    font-weight: bolder;
-}
-
 .card {
-    flex: 1;
-    /* height: 175px; */
-    background-color: #493003;
-    margin: 15px;
-    /* overflow: hidden;
-    box-shadow: 0 2px 20px gray; */
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: transform 1000ms ease-in;
-    padding-bottom: 5px;
+  scroll-margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*   width: min(100%, 300px); */
+  background-color: rgba(128, 98, 0, 0.795);
+  border: 2px solid rgb(202, 202, 60);
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgb(202, 202, 60);
+  border-radius: 15px;
+  padding: 0.5em;
 }
 
-.card:hover {
-    transform: scale(1.1);
+.card figure {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
-.card__image {
-    height: 150px;
-    width: 100%;
-    background-size: cover;
-    margin-bottom: 5px;
+.card img {
+  display: block;
+  width: 12em;
+  height: 7.5em;
+  object-fit: fill;
+  border-radius: 10px;
+  animation: banner 3s;
+}
+
+@keyframes banner {
+  0% {
+    top: 0px;
+    height: 0;
+  }
+  25% {
+    top: 50px;
+  }
+  50% {
+    top: 100px;
+  }
+  100% {
+    top: 200px;
+  }
+}
+
+.card figcaption.top {
+  font-weight: bolder;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: clamp(1rem, 2vh, 3rem);
+  text-align: center;
+  margin: 0 0 15px 0;
+  max-width: 192px;
+}
+
+.card figcaption.bottom {
+  font-weight: bolder;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: clamp(1rem, 2vh, 3rem);
+  text-align: center;
+  margin: 5px 0 5px 0;
+  max-width: 192px;
+}
+
+.details {
+  background-color: rgba(46, 36, 4, 0.795);
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: clamp(0.7rem, 1vh, 2rem);
+  font-weight: 1000;
+  padding: 7.5px;
+  box-shadow: 0 2px 20px rgb(202, 202, 60);
+  border: none;
+  border-radius: 10px;
+  margin-top: 7.5px;
+  margin-bottom: 2.5px;
+  cursor: pointer;
+}
+
+.details:hover {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 2px 20px black;
+  transition: all 1000ms ease-in-out;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .card figcaption.top {
+    width: 10em;
+    font-size: clamp(0.6rem, 2vh, 2rem);
+    height: 22px;
+    margin: 0 0 35px 0;
+  }
+
+  .card figcaption.bottom {
+    width: 10em;
+    font-size: clamp(0.6rem, 2vh, 2rem);
+    margin: 5px 0 5px 0;
+  }
+
+  .details {
+    font-size: clamp(0.5rem, 1.75vh, 2rem);
+  }
 }

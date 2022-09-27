@@ -1,46 +1,130 @@
 .main {
-    width: 100%;
-    height: 100vh;
-}
-
-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100vh;
 }
 
 .content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 20%;
+  margin: 0 0 0 -175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: 200% auto;
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textclip 3s linear infinite;
+  font-size: 35px;
+  z-index: 1;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .button {
-    background-color: #333;
-    color: #fff;
-    font-weight: bolder;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 0.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #817a12;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bolder;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
 }
 
 .button:hover {
-    background: greenyellow;
-    color: black;
-    font-weight: bolder;
-}  
+  background: orangered;
+  color: #333;
+}
+
+@media screen and (min-width: 320px) {
+  .content {
+    left: center;
+    margin: 0 0 0 0;
+    font-size: 15px;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
+  .button {
+    padding: 7.5px 7.5px;
+    font-size: 17.5px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .content {
+    left: center;
+    margin: 0 0 0 0;
+    font-size: 30px;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
+  .button {
+    padding: 12px 12px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 996px) {
+  .content {
+    left: center;
+    margin: 0 0 0 -175px;
+    font-size: 27px;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
+  .button {
+    padding: 12px 12px;
+    font-size: 22px;
+  }
+}

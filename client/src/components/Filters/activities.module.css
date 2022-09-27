@@ -1,22 +1,14 @@
 .activities {
-    width: 250px;
-    height: 35px;
-    border: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-right: 5px;
-    margin-top: 30px;
-    background-color: rgb(182, 182, 35);
-    cursor: pointer;
-}
-
-.activities_h4 {
-    height: 30px;
-    color: red;
-    font-weight: bolder;
-    border-radius: 5px;
-    letter-spacing: 0.5px;
+  width: 210px;
+  height: 35px;
+  border: none;
+  color: rgb(95, 55, 2);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  background-color: rgb(182, 182, 35);
+  cursor: pointer;
 }

@@ -1,35 +1,35 @@
 .searchBar input {
-    display: inline;
-    width: 200px;
-    height: 35px;
-    border: none;
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-right: 5px;
-    background-color: rgb(182, 182, 35);
-    cursor: pointer;
+  display: inline;
+  width: 210px;
+  height: 35px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-right: 5px;
+  background-color: rgb(182, 182, 35);
+  cursor: pointer;
 }
 
 .searchBarBtn {
-    display: inline;
-    width: max-content;
-    height: 35px;
-    border: none;
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-right: 5px;
-    background-color: brown;
-    cursor: pointer;
+  display: inline;
+  width: max-content;
+  height: 35px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-right: 5px;
+  background-color: brown;
+  cursor: pointer;
 }
 
 .searchBarBtn:hover {
-    color: #333;
-    background-color: yellowgreen;
-    transition: all 1000ms ease-in-out;
+  color: #333;
+  background-color: yellowgreen;
+  transition: all 1000ms ease-in-out;
 }

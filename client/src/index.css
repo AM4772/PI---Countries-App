@@ -1,17 +1,20 @@
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #f4f4f4;
-  color: #555555;
+  background-color: black;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  /* same as above
-  font: normal 16px Verdana, Geneva, Tahoma, sans-serif;
-  */
-  margin: 0;
 }
