@@ -9,6 +9,8 @@ require("./db.js");
 const server = express();
 const cors = require("cors");
 
+server.use(cors());
+
 server.name = "API";
 
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
@@ -17,10 +19,7 @@ server.use(cookieParser());
 server.use(morgan("dev"));
 server.use((req, res, next) => {
   // Access-Control-Allow-Origin ---> update to match the domain (URL) you will make the request from
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://pi-countries-app.vercel.app/"
-  ); // http://localhost:3000
+  res.header("Access-Control-Allow-Origin", "*"); // http://localhost:3000
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
