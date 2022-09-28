@@ -6,7 +6,7 @@
 
 .container {
   height: auto;
-  background-image: url("../../assets/pexels-monstera-7412069.jpg");
+  background-image: url("../../assets/pexels-monstera-7412069-1280x740.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -131,7 +131,7 @@
 
 @media screen and (min-width: 320px) {
   .container {
-    height: 100vh;
+    height: auto;
   }
 }
 
