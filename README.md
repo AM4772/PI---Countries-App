@@ -1,65 +1,173 @@
-# COUNTRIES APP
-
-![countries-home](/Countries.PNG)
-
-## About the App
-
-This application was one of the requirements of **Henry's Full Stack Developer Bootcamp**. We were **`only`** allowed to use the technologies taught during the course.
-
-Technologies used:
-
-![JavaScript](https://img.shields.io/badge/-JavaScript-696969?style=flat&logo=javascript)  
-![React](https://img.shields.io/badge/-React-696969?style=flat&logo=react)  
-![Redux](https://img.shields.io/badge/-Redux-696969?style=flat&logo=redux)  
-![HTML5](https://img.shields.io/badge/-HTML5-696969?style=flat&logo=HTML5)  
-![CSS](https://img.shields.io/badge/-CSS-696969?style=flat&logo=CSS3&logoColor=1572B6)  
-![Node.js](https://img.shields.io/badge/-Node.js-696969?style=flat&logo=node.js)  
-![Express](https://img.shields.io/badge/-Express-696969?style=flat&logo=express)  
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-696969?style=flat&logo=postgreSQL)  
-![Sequelize](https://img.shields.io/badge/-Sequelize-696969?style=flat&logo=Sequelize)  
- ![Git](https://img.shields.io/badge/-Git-696969?style=flat&logo=git)  
- ![GitHub](https://img.shields.io/badge/-GitHub-696969?style=flat&logo=github)
-
-The functionalities required to move on to the next instance in the bootcamp were: Landing page, Navbar, Search (by country name), Filter (by continent and touristic activity), Sorts (asc and desc), pagination, Create a touristic activity, Validations and a pleasant graphical UI. This link will take you to the web page: **[Countries App](https://pi-countries-app.vercel.app/ "Countries App")**, _let me know your comments and suggestions!_
-
-PS: I will continue improving it and adding more functionalities.
-
-<h3> 🤝🏻 &nbsp;Connect with me through </h3>
-
-<p align="center">
-<a href="https://www.linkedin.com/in/aldo-moro/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Aldo%20Moro-blue?style=flat-square&logo=linkedin"></a>
-<a href="mailto:moro_bramanti@hotmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-moro_bramanti@hotmail.com-blue?style=flat-square&logo=outlook"></a>
+<p align='left'>
+    <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
 </p>
 
-⭐️ Link to my ![GitHub](https://img.shields.io/badge/-GitHub-696969?style=flat&logo=github) profile: [AM4772](https://github.com/AM4772)
+# Individual Project - Henry Countries
 
-## How to use it locally
+<p align="left">
+  <img height="200" src="./countries.png" />
+</p>
 
-- You must install in your computer:
-  - A text editor like **`Visual Studio Code`** or **`Sublime`**, etc.
-  - **`Git`**, link to instructions: [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "Instructions Git")
-  - **`PostgreSQL`**, link to instructions: [PostgreSQL](https://www.postgresql.org/download/ "Instructions PostgreSQL")
-- Up to the right of this page, you will see a green button named "Code". Click on it and copy the HTTPS address to this repository.
-- In your text editor, place the cursor in the desired folder, paste the HTTPS address and hit Enter. This will download the repository to your computer. You will see the same folder structure and files as you see at the top of this page. Next, run the following commands inside the folder `npm install` and then `npm init`.
-- Now you must install all the required dependencies for the front-end and back-end:
-  - Front-end: place cursor inside `client`folder and run the following command:
-  ```bash
-      npm install axios dotenv-webpack react react-dom react-router-dom react-scripts react-select redux redux-thunk web-vitals
-  ```
-  - Back-end: place cursor inside `api`folder and run the following command:
-  ```bash
-      npm install axios body-parser cookie-parser cors dotenv express morgan index.js nodemon pg pg-hstore sequelize chai mocha supertest supertest-session node
-  ```
-- In the `api` folder, create a `.env` file with the following content:
-  ```javascript
-  DB_USER = postgres;
-  DB_PASSWORD = `your PostgreSQL password`; // this is the one you created when downloading the software
-  DB_HOST = localhost;
-  DB_NAME = countries;
-  PORT = 3001;
-  ```
-- In ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-696969?style=flat&logo=postgreSQL), you must create a new database named **countries**.
-- The content inside the `client` folder was created using **`Create React App`**.
-- To run the app in your localhost, first run the command `npm start` from the `api` folder and then do the same from the `client` folder. This should open up a browser where you will see the app running.
+## Objetivos del Proyecto
 
-### 🤝🏻 &nbsp;Contact me if you have any problems with the instructions
+- Construir una App utlizando React, Redux, Node y Sequelize.
+- Afirmar y conectar los conceptos aprendidos en la carrera.
+- Aprender mejores prácticas.
+- Aprender y practicar el workflow de GIT.
+- Usar y practicar testing.
+
+## Horarios y Fechas
+
+El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO).
+
+## Comenzando
+
+ 1. Forkear el repositorio para tener una copia del mismo en sus cuentas
+ 2. Clonar el repositorio en sus computadoras para comenzar a trabajar
+
+Tendrán un `boilerplate` con la estructura general tanto del servidor como de cliente.
+
+__IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
+
+Actualmente las versiónes necesarias son:
+
+ * __Node__: 12.18.3 o mayor
+ * __NPM__: 6.14.16 o mayor
+
+Para verificar que versión tienen instalada:
+
+> node -v
+>
+> npm -v
+
+## BoilerPlate
+
+El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
+
+En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
+
+```
+DB_USER=usuariodepostgres
+DB_PASSWORD=passwordDePostgres
+DB_HOST=localhost
+```
+
+Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
+
+Adicionalmente será necesario que creen desde psql una base de datos llamada `countries`
+
+El contenido de `client` fue creado usando: Create React App.
+
+## Enunciado
+
+La idea general es crear una aplicación en la cual se pueda ver información de  distintos paises utilizando la api externa [restcountries](https://restcountries.com/) y a partir de ella poder, entre otras cosas:
+
+  - Buscar paises
+  - Filtrarlos / Ordenarlos
+  - Crear actividades turísticas
+
+__IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados sino que deben realizarlo ustedes mismos. En particular alguno de los ordenamientos o filtrados debe si o si realizarse desde el frontend.
+
+### Únicos Endpoints/Flags que pueden utilizar
+
+  - GET https://restcountries.com/v3/all
+  - GET https://restcountries.com/v3/name/{name}
+  - GET https://restcountries.com/v3/alpha/{code}
+
+### Requerimientos mínimos:
+
+A continuación se detallaran los requerimientos mínimos para la aprobación del proyecto individial. Aquellos que deseen agregar más funcionalidades podrán hacerlo. En cuanto al diseño visual no va a haber wireframes ni prototipos prefijados sino que tendrán libertad de hacerlo a su gusto pero tienen que aplicar los conocimientos de estilos vistos en el curso para que quede agradable a la vista.
+
+__IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components)
+
+#### Tecnologías necesarias:
+- [ ] React
+- [ ] Redux
+- [ ] Express
+- [ ] Sequelize - Postgres
+
+#### Frontend
+
+Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
+
+__Pagina inicial__: deben armar una landing page con
+- [ ] Alguna imagen de fondo representativa al proyecto
+- [ ] Botón para ingresar al home (`Ruta principal`)
+
+__Ruta principal__: debe contener
+- [ ] Input de búsqueda para encontrar países por nombre
+- [ ] Área donde se verá el listado de países. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta `GET /countries` y deberá mostrar su:
+  - Imagen de la bandera
+  - Nombre
+  - Continente
+- [ ] Botones/Opciones para filtrar por continente y por tipo de actividad turística
+- [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente los países por orden alfabético y por cantidad de población
+- [ ] Paginado para ir buscando y mostrando los siguientes paises, 10 paises por pagina, mostrando los primeros 9 en la primer pagina.
+
+__Ruta de detalle de país__: debe contener
+- [ ] Los campos mostrados en la ruta principal para cada país (imagen de la bandera, nombre, código de país de 3 letras y continente)
+- [ ] Código de país de 3 letras (id)
+- [ ] Capital
+- [ ] Subregión
+- [ ] Área (Mostrarla en km2 o millones de km2)
+- [ ] Población
+- [ ] Actividades turísticas con toda su información asociada
+
+__Ruta de creación de actividad turística__: debe contener
+- [ ] Un formulario __controlado con JavaScript__ con los siguientes campos:
+  - Nombre
+  - Dificultad
+  - Duración
+  - Temporada
+- [ ] Posibilidad de seleccionar/agregar varios países en simultáneo
+- [ ] Botón/Opción para crear una nueva actividad turística
+
+> Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. Pueden agregar las validaciones que consideren. Por ejemplo: Que el nombre de la actividad no pueda contener símbolos, que la duración no pueda exceder determinado valor, etc.
+
+#### Base de datos
+
+El modelo de la base de datos deberá tener las siguientes entidades (Aquellas propiedades marcadas con asterísco deben ser obligatorias):
+
+- [ ] País con las siguientes propiedades:
+  - ID (Código de 3 letras) *
+  - Nombre *
+  - Imagen de la bandera *
+  - Continente *
+  - Capital *
+  - Subregión
+  - Área
+  - Población
+- [ ] Actividad Turística con las siguientes propiedades:
+  - ID
+  - Nombre
+  - Dificultad (Entre 1 y 5)
+  - Duración
+  - Temporada (Verano, Otoño, Invierno o Primavera)
+
+La relación entre ambas entidades debe ser de muchos a muchos ya que un país puede contener varias actividades turísticas y, a su vez, una actividad turística puede darse en múltiples países. Por ejemplo una actividad podría ser "Ski" que podría ocurrir en Argentina y también en Estados Unidos, pero a su vez Argentina podría también incluir "Rafting".
+
+#### Backend
+
+Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
+
+__IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y paginados brindados por la API externa, todas estas funcionalidades tienen que implementarlas ustedes.
+
+- [ ] __GET /countries__:
+  - En una primera instancia deberán traer todos los países desde restcountries y guardarlos en su propia base de datos y luego ya utilizarlos desde allí (Debe almacenar solo los datos necesarios para la ruta principal)
+  - Obtener un listado de los paises.
+- [ ] __GET /countries/{idPais}__:
+  - Obtener el detalle de un país en particular
+  - Debe traer solo los datos pedidos en la ruta de detalle de país
+  - Incluir los datos de las actividades turísticas correspondientes
+- [ ] __GET /countries?name="..."__:
+  - Obtener los países que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser una matcheo exacto)
+  - Si no existe ningún país mostrar un mensaje adecuado
+- [ ] __POST /activity__:
+  - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
+  - Crea una actividad turística en la base de datos
+
+
+#### Testing
+- [ ] Al menos tener un componente del frontend con sus tests respectivos
+- [ ] Al menos tener una ruta del backend con sus tests respectivos
+- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
