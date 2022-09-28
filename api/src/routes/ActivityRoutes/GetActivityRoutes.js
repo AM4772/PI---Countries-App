@@ -25,7 +25,9 @@ const getActivities = async (req, res) => {
       }
       return res.status(200).json(countryCodes);
     }
-    const activities = await Activity.findAll();
+    const activities = await Activity.findAll({
+      order: [["name", "ASC"]],
+    });
     return res.status(200).json(activities);
   } catch (error) {
     return res.status(404).json({ error: error });
